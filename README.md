@@ -17,7 +17,7 @@ Tips:
 
 ## Example of solution
 
-Checkout to branch ```final-project-example``` to see an intended solution of this case.
+Checkout to branch ```final-project-example``` to see an intended solution for this case.
 
 ## References
 
