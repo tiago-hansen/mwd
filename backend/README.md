@@ -11,13 +11,13 @@ source env/bin/activate
 
 2. Install necessary pip packages
 ```bash
-pip install django djangorestframework django-cors-headers faker
+pip install django djangorestframework django-cors-headers faker numpy
 ```
 OR
 ```bash
 pip install -r requirements.txt
 ```
-Django Cors Headers is a middleware and faker is a lib that we will use to generate mock data to test out our endpoints.
+Django Cors Headers is a middleware and faker is a lib that we will use to generate mock data to test out our endpoints. Numpy will also be used to help generate random data within certain distributions.
 
 ## Run start-up commands
 
