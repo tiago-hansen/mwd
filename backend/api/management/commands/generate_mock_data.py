@@ -77,7 +77,7 @@ class Command(BaseCommand):
         for _ in range(100):
             student = Student.objects.order_by('?').first()
             course = Course.objects.order_by('?').first()
-            grade = np.random.normal(6, 1.5) # Normal distribution with mean 6 and std 1.5
+            grade = round(np.random.normal(6, 1.5), 2) # Normal distribution with mean 6 and std 1.5
             Enrollment.objects.create(
                 student=student,
                 course=course,
