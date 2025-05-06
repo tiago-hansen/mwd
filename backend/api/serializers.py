@@ -1,15 +1,23 @@
 from rest_framework import serializers
 from .models import (
-    Student, 
-    UndergraduateProgram, 
-    Course, 
+    Student,
+    UndergraduateProgram,
+    Course,
     Enrollment,
 )
+
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = '__all__'
+        fields = ['name', 'email', 'registration']
+
+    def to_representation(self, instance):
+        return {
+            'Nome': instance.name,
+            'Email': instance.email,
+            'Matrícula': instance.registration,
+        }
 
 
 class UndergraduateProgramSerializer(serializers.ModelSerializer):
@@ -28,3 +36,7 @@ class EnrollmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Enrollment
         fields = '__all__'
+
+
+class AverageGradeSerializer(serializers.Serializer):
+    average_grade = serializers.FloatField()
