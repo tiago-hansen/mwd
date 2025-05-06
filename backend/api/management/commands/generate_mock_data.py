@@ -59,9 +59,9 @@ class Command(BaseCommand):
     
     def generate_courses(self):
         '''
-        Generate 6 courses with random data
+        Generate 70 courses with random data
         '''
-        for _ in range(6):
+        for _ in range(70):
             course = Course.objects.create(
                 name=fake.word(),
                 code=fake.unique.random_number(digits=5),
@@ -72,15 +72,17 @@ class Command(BaseCommand):
     
     def generate_enrollments(self):
         '''
-        Generate 100 enrollments with random data
+        Generate 700 enrollments with random data
         '''
-        for _ in range(100):
+        for _ in range(700):
             student = Student.objects.order_by('?').first()
             course = Course.objects.order_by('?').first()
             grade = round(np.random.normal(6, 1.5), 2) # Normal distribution with mean 6 and std 1.5
+            date = fake.date_time_this_year()
             Enrollment.objects.create(
                 student=student,
                 course=course,
                 grade=grade if grade <= 10 else 10, # Limit grade to 10
+                date=date
             )
             self.stdout.write(self.style.SUCCESS(f'Created enrollment for {student.name} in {course.code}'))
