@@ -30,6 +30,8 @@ class Course(models.Model):
         (6, '6'),
         (7, '7'),
         (8, '8'),
+        (9, '9'),
+        (10, '10'),
     ]
     semester = models.IntegerField(choices=SEMESTER_CHOICES)
 
